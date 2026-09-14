@@ -1,13 +1,79 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'react-toastify/dist/ReactToastify.css';
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+:root {
+  --primary-teal: #008B8B;
+  --bg-light: #f8f9fa;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Times New Roman', Times, serif;
+  overflow-x: hidden;
+}
+
+.text-teal {
+  color: var(--primary-teal);
+}
+
+.bg-teal {
+  background-color: var(--primary-teal);
+}
+
+.btn-teal {
+  background-color: var(--primary-teal);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+}
+
+.hero-section {
+  background-image: url('https://placehold.co/1920x800');
+  background-size: cover;
+  background-position: center;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.floating-card-container {
+  position: relative;
+  height: 100%;
+}
+
+.floating-card {
+  position: absolute;
+  width: 250px;
+  background: white;
+  padding: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.floating-card.top-card {
+  top: -50px;
+  right: 50px;
+}
+
+.floating-card.bottom-card {
+  bottom: -50px;
+  right: 150px;
+}
+
+.product-card-img {
+  height: 300px;
+  object-fit: cover;
+}
+
+.rating-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--primary-teal);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-family: sans-serif;
+  font-size: 0.8rem;
 }
