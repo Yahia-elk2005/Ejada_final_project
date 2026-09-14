@@ -8,7 +8,7 @@ const ProductCard = ({ product }) => {
         <Card.Img 
           variant="top" 
           src={product.image} 
-          style={{ height: '380px', objectFit: 'cover' }} 
+          style={{ height: '380px', objectFit: 'cover', backgroundColor: '#ffffff' }}
           className="rounded-0" 
         />
         <div 

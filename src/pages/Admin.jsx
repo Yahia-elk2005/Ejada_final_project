@@ -3,7 +3,7 @@ import { Container, Table, Form, Button, Row, Col, Badge } from 'react-bootstrap
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 
-const API_URL = 'https://65XXXXXX.mockapi.io/products';
+const API_URL = 'https://6aa7e5149b08676cd32b9f39.mockapi.io/products';
 
 const Admin = () => {
   const [products, setProducts] = useState([]);
@@ -24,15 +24,29 @@ const Admin = () => {
   }, []);
 
   const handleImageUpload = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setFormData({ ...formData, image: reader.result });
-      };
-      reader.readAsDataURL(file);
-    }
+  const file = e.target.files[0];
+  if (!file) return;
+
+  const img = new Image();
+  img.src = URL.createObjectURL(file);
+  img.onload = () => {
+    const canvas = document.createElement('canvas');
+    const maxWidth = 300;
+    const scaleFactor = maxWidth / img.width;
+    canvas.width = maxWidth;
+    canvas.height = img.height * scaleFactor;
+
+    const ctx = canvas.getContext('2d');
+
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+    const compressedBase64 = canvas.toDataURL('image/jpeg', 0.5);
+    setFormData(prev => ({ ...prev, image: compressedBase64 }));
   };
+};
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -100,13 +114,15 @@ const Admin = () => {
             />
           </Col>
           <Col md={6} className="mb-3">
-            <Form.Control 
-              type="text" 
-              placeholder="Category" 
+            <Form.Select 
               value={formData.category}
               onChange={(e) => setFormData({...formData, category: e.target.value})}
-              required 
-            />
+              required
+            >
+              <option value="">Select Category</option>
+              <option value="Woman">Woman</option>
+              <option value="Men">Men</option>
+            </Form.Select>
           </Col>
           <Col md={4} className="mb-3">
             <Form.Control 
@@ -164,10 +180,10 @@ const Admin = () => {
                 <img src={product.image} alt={product.name} style={{ width: '50px', height: '50px', objectFit: 'cover', borderRadius: '4px' }} />
               </td>
               <td>{product.name}</td>
-              <td><Badge bg="info">{product.category}</Badge></td>
+              <td><Badge bg={product.category === 'Woman' ? 'danger' : 'primary'}>{product.category}</Badge></td>
               <td>${product.price}</td>
               <td>★ {product.rating}</td>
-              <td>
+              <td className="text-nowrap">
                 <Button variant="warning" size="sm" className="me-2 text-white" onClick={() => handleEdit(product)}>Edit</Button>
                 <Button variant="danger" size="sm" onClick={() => handleDelete(product.id)}>Delete</Button>
               </td>
