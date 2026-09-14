@@ -20,7 +20,7 @@ const Features = () => {
         </Col>
 
         <Col lg={4}>
-          <Card className="text-start border-0 bg-light p-3 mb-4">
+          <Card className="text-start border-0 bg-light p-3 mb-4" >
             <Card.Body className="d-flex align-items-center gap-3">
               <div className="rounded-circle bg-teal text-white d-flex align-items-center justify-content-center flex-shrink-0" style={{ width: '50px', height: '50px' }}>
                 🎧

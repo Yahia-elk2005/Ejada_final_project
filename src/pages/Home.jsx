@@ -203,7 +203,7 @@ const Home = () => {
               </div>
             </div>
             
-            <div className="feature-card bg-white p-4 d-flex align-items-center gap-4 border-0 shadow-sm flex-grow-1">
+            <div className="feature-card bg-white p-4 d-flex align-items-center gap-4 border-0 shadow-sm flex-grow-1 ">
               <div className="icon-circle flex-shrink-0"><FiSend /></div>
               <div>
                 <h5 className="mb-2" style={{ fontFamily: 'Playfair Display' }}>Fast Delivery</h5>

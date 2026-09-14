@@ -36,7 +36,7 @@ const Footer = () => {
               <li><a href="#casual-woman" className="text-white text-decoration-none">Casual Woman</a></li>
             </ul>
           </Col>
-          <Col lg={3} md={4} className="mt-lg-5">
+          <Col lg={2} md={4} className="mt-lg-5">
             <h6 className="fw-bold mb-4 small">Get Help</h6>
             <ul className="list-unstyled small d-grid gap-3 opacity-100">
               <li><a href="#faq" className="text-white text-decoration-none">FAQ</a></li>
@@ -46,7 +46,7 @@ const Footer = () => {
               <li><a href="#shipping" className="text-white text-decoration-none">Shipping</a></li>
             </ul>
           </Col>
-          <Col lg={3} md={4} className="mt-lg-5">
+          <Col lg={2} md={4} className="mt-lg-5">
             <h6 className="fw-bold mb-4 small">Account</h6>
             <ul className="list-unstyled small d-grid gap-3 opacity-100">
               <li><a href="#account" className="text-white text-decoration-none">My Account</a></li>
