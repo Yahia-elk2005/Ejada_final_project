@@ -40,8 +40,14 @@ const reviewsData = [
 
 const Testimonials = () => {
   return (
-    /* Removed outer div, applied background and padding directly to Container */
-    <Container className="py-5 px-4 px-lg-5 mb-5" style={{ backgroundColor: '#F2F2F2' }}>
+    <Container 
+      className="py-5 px-4 px-lg-5 position-relative" 
+      style={{ 
+        backgroundColor: '#F2F2F2',
+        marginBottom: '-100px',
+        zIndex: 10
+      }}
+    >
       <Swiper
         modules={[Autoplay]}
         spaceBetween={24}

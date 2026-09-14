@@ -24,29 +24,27 @@ const Admin = () => {
   }, []);
 
   const handleImageUpload = (e) => {
-  const file = e.target.files[0];
-  if (!file) return;
+    const file = e.target.files[0];
+    if (!file) return;
 
-  const img = new Image();
-  img.src = URL.createObjectURL(file);
-  img.onload = () => {
-    const canvas = document.createElement('canvas');
-    const maxWidth = 300;
-    const scaleFactor = maxWidth / img.width;
-    canvas.width = maxWidth;
-    canvas.height = img.height * scaleFactor;
-
-    const ctx = canvas.getContext('2d');
-
-    ctx.fillStyle = '#FFFFFF';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-    const compressedBase64 = canvas.toDataURL('image/jpeg', 0.5);
-    setFormData(prev => ({ ...prev, image: compressedBase64 }));
+    const img = new Image();
+    img.src = URL.createObjectURL(file);
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      const maxWidth = 300;
+      const scaleFactor = maxWidth / img.width;
+      canvas.width = maxWidth;
+      canvas.height = img.height * scaleFactor;
+      
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#FFFFFF';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      
+      const compressedBase64 = canvas.toDataURL('image/jpeg', 0.5);
+      setFormData(prev => ({ ...prev, image: compressedBase64 }));
+    };
   };
-};
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -96,6 +94,7 @@ const Admin = () => {
   return (
     <Container className="my-5">
       <ToastContainer position="top-right" autoClose={3000} />
+      
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2>Admin Dashboard</h2>
         <a href="/" className="btn btn-outline-secondary">Go to Website</a>
@@ -182,7 +181,7 @@ const Admin = () => {
               <td>{product.name}</td>
               <td><Badge bg={product.category === 'Woman' ? 'danger' : 'primary'}>{product.category}</Badge></td>
               <td>${product.price}</td>
-              <td>★ {product.rating}</td>
+              <td>⭐ {product.rating}</td>
               <td className="text-nowrap">
                 <Button variant="warning" size="sm" className="me-2 text-white" onClick={() => handleEdit(product)}>Edit</Button>
                 <Button variant="danger" size="sm" onClick={() => handleDelete(product.id)}>Delete</Button>

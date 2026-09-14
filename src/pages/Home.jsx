@@ -46,7 +46,7 @@ const Home = () => {
 
       <div className="hero-wrapper" style={{ backgroundImage: `url(${heroBg})` }}>
         <Navbar expand="lg" className="navbar-custom py-4 position-absolute" style={{ top: 0 }}>
-          <Container fluid className="px-lg-5">
+          <Container>
             <Navbar.Brand href="/" className="me-4">
               <img src={logo} alt="MODEVA" className="brand-logo" />
             </Navbar.Brand>
@@ -74,7 +74,7 @@ const Home = () => {
         </Navbar>
 
         <div className="hero-content-wrapper d-flex">
-          <Container fluid className="px-lg-5 position-relative d-flex align-items-end pb-5 w-100">
+          <Container className="position-relative d-flex align-items-end pb-5 w-100">
             
             <div className="hero-text-block text-white w-100 pb-3">
               <p className="subtitle mb-3">MADE IN INDONESIA, DEDICATED TO INDONESIA</p>
@@ -108,7 +108,6 @@ const Home = () => {
 
           </Container>
         </div>
-
       </div>
 
       <Container className="my-5 py-5">
@@ -155,8 +154,8 @@ const Home = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="text-center mt-2">
-          <Button className="btn-teal rounded-pill px-5 py-2">SEE MORE</Button>
+        <div className="mt-4">
+          <Button className="btn-teal rounded-0 px-4 py-2">SEE MORE &rarr;</Button>
         </div>
       </Container>
 
@@ -180,15 +179,13 @@ const Home = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="text-center mt-2">
-          <Button className="btn-teal rounded-pill px-5 py-2">SEE MORE</Button>
+        <div className="mt-4">
+          <Button className="btn-teal rounded-0 px-4 py-2">SEE MORE &rarr;</Button>
         </div>
       </Container>
 
-      {/* Removed the full-width outer div here and applied styling directly to the Container */}
-      <Container className="mt-5 py-5 px-4 px-lg-5" style={{ backgroundColor: '#F2F2F2' }}>
+      <Container className="my-5 py-5 px-4 px-lg-5" style={{ backgroundColor: '#F2F2F2' }}>
         <Row className="g-4 align-items-stretch">
-          {/* Left Column */}
           <Col md={4}>
             <div className="feature-card h-100 bg-white p-5 text-center d-flex flex-column justify-content-center align-items-center border-0 shadow-sm">
               <div className="icon-circle mb-4"><FiThumbsUp /></div>
@@ -197,7 +194,6 @@ const Home = () => {
             </div>
           </Col>
           
-          {/* Middle Column */}
           <Col md={4} className="d-flex flex-column gap-4">
             <div className="feature-card bg-white p-4 d-flex align-items-center gap-4 border-0 shadow-sm flex-grow-1">
               <div className="icon-circle flex-shrink-0"><FiPhoneCall /></div>
@@ -216,7 +212,6 @@ const Home = () => {
             </div>
           </Col>
           
-          {/* Right Column */}
           <Col md={4}>
             <div className="feature-card h-100 bg-white p-5 text-center d-flex flex-column justify-content-center align-items-center border-0 shadow-sm">
               <div className="icon-circle mb-4"><FiCreditCard /></div>
