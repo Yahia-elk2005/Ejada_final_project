@@ -184,10 +184,13 @@ const Home = () => {
         </div>
       </Container>
 
-      <Container className="my-5 py-5 px-4 px-lg-5" style={{ backgroundColor: '#F2F2F2' }}>
+<Container className="my-5 py-5 px-lg-5">
         <Row className="g-4 align-items-stretch">
           <Col md={4}>
-            <div className="feature-card h-100 bg-white p-5 text-center d-flex flex-column justify-content-center align-items-center border-0 shadow-sm">
+            <div 
+              className="feature-card w-100 h-100 bg-white p-5 text-center d-flex flex-column justify-content-center align-items-center" 
+              style={{ border: '26px solid #F2F2F2' }}
+            >
               <div className="icon-circle mb-4"><FiThumbsUp /></div>
               <h4 className="mb-3" style={{ fontFamily: 'Playfair Display' }}>100% Satisfaction Guaranteed</h4>
               <p className="text-muted small mb-0">Lorem ipsum dolor sit amet consectetur. Suspendisse laoreet scelerisque morbi vulputate. Quisque bibendum eget id diam elementum fringilla duis.</p>
@@ -195,7 +198,10 @@ const Home = () => {
           </Col>
           
           <Col md={4} className="d-flex flex-column gap-4">
-            <div className="feature-card bg-white p-4 d-flex align-items-center gap-4 border-0 shadow-sm flex-grow-1">
+            <div 
+              className="feature-card w-100 bg-white p-4 d-flex align-items-center gap-4 flex-grow-1" 
+              style={{ border: '26px solid #F2F2F2' }}
+            >
               <div className="icon-circle flex-shrink-0"><FiPhoneCall /></div>
               <div>
                 <h5 className="mb-2" style={{ fontFamily: 'Playfair Display' }}>24/7 Online Service</h5>
@@ -203,7 +209,10 @@ const Home = () => {
               </div>
             </div>
             
-            <div className="feature-card bg-white p-4 d-flex align-items-center gap-4 border-0 shadow-sm flex-grow-1 ">
+            <div 
+              className="feature-card w-100 bg-white p-4 d-flex align-items-center gap-4 flex-grow-1" 
+              style={{ border: '26px solid #F2F2F2' }}
+            >
               <div className="icon-circle flex-shrink-0"><FiSend /></div>
               <div>
                 <h5 className="mb-2" style={{ fontFamily: 'Playfair Display' }}>Fast Delivery</h5>
@@ -213,7 +222,10 @@ const Home = () => {
           </Col>
           
           <Col md={4}>
-            <div className="feature-card h-100 bg-white p-5 text-center d-flex flex-column justify-content-center align-items-center border-0 shadow-sm">
+            <div 
+              className="feature-card w-100 h-100 bg-white p-5 text-center d-flex flex-column justify-content-center align-items-center" 
+              style={{ border: '26px solid #F2F2F2' }}
+            >
               <div className="icon-circle mb-4"><FiCreditCard /></div>
               <h4 className="mb-3" style={{ fontFamily: 'Playfair Display' }}>Payment With Secure System</h4>
               <p className="text-muted small mb-0">Lorem ipsum dolor sit amet consectetur. Suspendisse laoreet scelerisque morbi vulputate. Quisque bibendum eget id diam elementum fringilla duis.</p>
@@ -221,7 +233,6 @@ const Home = () => {
           </Col>
         </Row>
       </Container>
-
       <Testimonials />
       <Footer />
     </div>
