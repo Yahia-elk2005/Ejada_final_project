@@ -5,12 +5,14 @@ import Admin from './pages/Admin';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/admin" element={<Admin />} />
-      </Routes>
-    </Router>
+    <div className="container-fluid p-0">
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/admin" element={<Admin />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 
