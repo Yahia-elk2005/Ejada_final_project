@@ -38,28 +38,7 @@ body {
   align-items: center;
 }
 
-.floating-card-container {
-  position: relative;
-  height: 100%;
-}
 
-.floating-card {
-  position: absolute;
-  width: 250px;
-  background: white;
-  padding: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.floating-card.top-card {
-  top: -50px;
-  right: 50px;
-}
-
-.floating-card.bottom-card {
-  bottom: -50px;
-  right: 150px;
-}
 
 .product-card-img {
   height: 300px;

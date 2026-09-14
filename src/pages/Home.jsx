@@ -59,35 +59,31 @@ const Home = () => {
                 <Nav.Link href="#about" className="nav-item-link">About</Nav.Link>
                 <Nav.Link href="/admin" className="nav-item-link">Dashboard</Nav.Link>
                 <div className="d-flex align-items-center gap-3 mt-3 mt-lg-0">
-                <InputGroup className="search-box">
-                  <InputGroup.Text className="search-icon-bg">
-                    <FiSearch size={15} />
-                  </InputGroup.Text>
-                  <Form.Control placeholder="Search" className="shadow-none search-input" />
-                </InputGroup>
-                <FiUser className="nav-icon ms-2" />
-                <FiShoppingBag className="nav-icon" />
-              </div>
+                  <InputGroup className="search-box">
+                    <InputGroup.Text className="search-icon-bg">
+                      <FiSearch size={15} />
+                    </InputGroup.Text>
+                    <Form.Control placeholder="Search" className="shadow-none search-input" />
+                  </InputGroup>
+                  <FiUser className="nav-icon ms-2" />
+                  <FiShoppingBag className="nav-icon" />
+                </div>
               </Nav>
-              
-              
             </Navbar.Collapse>
           </Container>
         </Navbar>
 
-        <div className="hero-content-wrapper">
-          <Container fluid className="px-lg-5 h-100 position-relative d-flex align-items-end justify-content-between pb-5">
-            <div className="hero-text-block text-white">
-              <p className="subtitle text-uppercase mb-3">MADE IN INDONESIA, DEDICATED TO INDONESIA</p>
-              <h1 className="hero-title fw-normal mb-0">DISCOVER THE ART OF<br />DRESSING UP</h1>
+        <div className="hero-content-wrapper d-flex">
+          <Container fluid className="px-lg-5 position-relative d-flex align-items-end pb-5 w-100">
+            
+            <div className="hero-text-block text-white w-100 pb-3">
+              <p className="subtitle mb-3">MADE IN INDONESIA, DEDICATED TO INDONESIA</p>
+              <h1 className="hero-title fw-normal mb-0">DISCOVER THE ART OF</h1>
+              <h1 className="hero-title fw-normal mb-0">DRESSING UP</h1>
             </div>
 
-            <div className="scroll-down text-white">
-              SCROLL DOWN <FiChevronDown size={16} />
-            </div>
-            
-            <div className="floating-cards-block d-none d-lg-flex flex-row justify-content-center align-items-center gap-4">
-              <div className="floating-card card-top">
+            <div className="floating-cards-block position-absolute end-0 bottom-0 mb-5 me-lg-5 pe-lg-3 d-none d-lg-flex">
+              <div className="floating-card card-top d-flex align-items-center">
                 <img src={cardProductImg} alt="Product" className="card-thumb" />
                 <div className="card-info ps-3">
                   <h6 className="card-product-title mb-1">Product Name<br/>in Here</h6>
@@ -96,7 +92,7 @@ const Home = () => {
                 </div>
               </div>
               
-              <div className="floating-card card-bottom">
+              <div className="floating-card card-bottom d-flex align-items-center">
                 <div className="card-info pe-3">
                   <h6 className="card-product-title mb-1">Product Name<br/>in Here</h6>
                   <p className="card-product-price mb-2">$300.000</p>
@@ -105,8 +101,14 @@ const Home = () => {
                 <img src={cardProductImg} alt="Product" className="card-thumb" />
               </div>
             </div>
+
+            <div className="scroll-down text-white position-absolute start-50 translate-middle-x bottom-0 mb-4">
+              SCROLL DOWN <FiChevronDown size={16} />
+            </div>
+
           </Container>
         </div>
+
       </div>
 
       <Container className="my-5 py-5">
@@ -183,42 +185,47 @@ const Home = () => {
         </div>
       </Container>
 
-      <div className="bg-light py-5 mt-5">
-        <Container className="py-4">
-          <Row className="g-4 align-items-stretch">
-            <Col md={4}>
-              <div className="feature-card h-100 bg-white p-5 text-center d-flex flex-column justify-content-center align-items-center border-0 shadow-sm">
-                <div className="icon-circle mb-4"><FiThumbsUp /></div>
-                <h5 className="fw-bold mb-3">100% Satisfaction Guaranteed</h5>
+      {/* Removed the full-width outer div here and applied styling directly to the Container */}
+      <Container className="mt-5 py-5 px-4 px-lg-5" style={{ backgroundColor: '#F2F2F2' }}>
+        <Row className="g-4 align-items-stretch">
+          {/* Left Column */}
+          <Col md={4}>
+            <div className="feature-card h-100 bg-white p-5 text-center d-flex flex-column justify-content-center align-items-center border-0 shadow-sm">
+              <div className="icon-circle mb-4"><FiThumbsUp /></div>
+              <h4 className="mb-3" style={{ fontFamily: 'Playfair Display' }}>100% Satisfaction Guaranteed</h4>
+              <p className="text-muted small mb-0">Lorem ipsum dolor sit amet consectetur. Suspendisse laoreet scelerisque morbi vulputate. Quisque bibendum eget id diam elementum fringilla duis.</p>
+            </div>
+          </Col>
+          
+          {/* Middle Column */}
+          <Col md={4} className="d-flex flex-column gap-4">
+            <div className="feature-card bg-white p-4 d-flex align-items-center gap-4 border-0 shadow-sm flex-grow-1">
+              <div className="icon-circle flex-shrink-0"><FiPhoneCall /></div>
+              <div>
+                <h5 className="mb-2" style={{ fontFamily: 'Playfair Display' }}>24/7 Online Service</h5>
                 <p className="text-muted small mb-0">Lorem ipsum dolor sit amet consectetur. Suspendisse laoreet scelerisque morbi vulputate. Quisque bibendum eget id diam elementum fringilla duis.</p>
               </div>
-            </Col>
-            <Col md={4} className="d-flex flex-column gap-4">
-              <div className="feature-card bg-white p-4 d-flex align-items-center gap-4 border-0 shadow-sm">
-                <div className="icon-circle flex-shrink-0"><FiPhoneCall /></div>
-                <div>
-                  <h6 className="fw-bold mb-2">24/7 Online Service</h6>
-                  <p className="text-muted small mb-0">Lorem ipsum dolor sit amet consectetur. Suspendisse laoreet scelerisque morbi.</p>
-                </div>
-              </div>
-              <div className="feature-card bg-white p-4 d-flex align-items-center gap-4 border-0 shadow-sm">
-                <div className="icon-circle flex-shrink-0"><FiSend /></div>
-                <div>
-                  <h6 className="fw-bold mb-2">Fast Delivery</h6>
-                  <p className="text-muted small mb-0">Lorem ipsum dolor sit amet consectetur. Suspendisse laoreet scelerisque morbi.</p>
-                </div>
-              </div>
-            </Col>
-            <Col md={4}>
-              <div className="feature-card h-100 bg-white p-5 text-center d-flex flex-column justify-content-center align-items-center border-0 shadow-sm">
-                <div className="icon-circle mb-4"><FiCreditCard /></div>
-                <h5 className="fw-bold mb-3">Payment With Secure System</h5>
+            </div>
+            
+            <div className="feature-card bg-white p-4 d-flex align-items-center gap-4 border-0 shadow-sm flex-grow-1">
+              <div className="icon-circle flex-shrink-0"><FiSend /></div>
+              <div>
+                <h5 className="mb-2" style={{ fontFamily: 'Playfair Display' }}>Fast Delivery</h5>
                 <p className="text-muted small mb-0">Lorem ipsum dolor sit amet consectetur. Suspendisse laoreet scelerisque morbi vulputate. Quisque bibendum eget id diam elementum fringilla duis.</p>
               </div>
-            </Col>
-          </Row>
-        </Container>
-      </div>
+            </div>
+          </Col>
+          
+          {/* Right Column */}
+          <Col md={4}>
+            <div className="feature-card h-100 bg-white p-5 text-center d-flex flex-column justify-content-center align-items-center border-0 shadow-sm">
+              <div className="icon-circle mb-4"><FiCreditCard /></div>
+              <h4 className="mb-3" style={{ fontFamily: 'Playfair Display' }}>Payment With Secure System</h4>
+              <p className="text-muted small mb-0">Lorem ipsum dolor sit amet consectetur. Suspendisse laoreet scelerisque morbi vulputate. Quisque bibendum eget id diam elementum fringilla duis.</p>
+            </div>
+          </Col>
+        </Row>
+      </Container>
 
       <Testimonials />
       <Footer />

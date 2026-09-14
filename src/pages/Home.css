@@ -14,6 +14,7 @@ body {
   min-height: 750px;
   display: flex;
   flex-direction: column;
+  overflow: hidden; 
 }
 
 .top-banner {
@@ -85,15 +86,21 @@ body {
   color: #ffffff;
   cursor: pointer;
 }
+.navbar-collapse.collapse.show{
+    background-color: #008B8B;
+    padding: 10px;
+}
+
 
 .hero-content-wrapper {
   flex: 1;
   width: 100%;
   position: relative;
+  display: flex; 
 }
 
 .hero-text-block {
-  max-width: 650px;
+  max-width: 850px;
 }
 
 .hero-title, .section-heading, .category-title {
@@ -107,10 +114,14 @@ body {
 }
 
 .subtitle {
+  font-family: 'Lato', sans-serif;
   letter-spacing: 2px;
-  font-size: 0.75rem;
+  font-size: 0.5rem;
   font-weight: 500;
   opacity: 0.9;
+  line-height: 1.4;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
 }
 
 .scroll-down {
@@ -127,6 +138,13 @@ body {
   white-space: nowrap;
 }
 
+.scroll-down-inline {
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
 .floating-cards-block {
   display: flex;
   flex-direction: column;
@@ -136,8 +154,9 @@ body {
 }
 
 .floating-card {
-  width: 330px;
-  height: 130px;
+  position: relative;
+  width: 260px; 
+  height: auto;
   background: #ffffff;
   padding: 12px;
   display: flex;
@@ -152,7 +171,7 @@ body {
 
 .card-bottom {
   align-self: flex-start;
-  transform: translateX(-65px);
+  /* transform: translateX(-65px); */
 }
 
 .card-thumb {
@@ -161,11 +180,11 @@ body {
   object-fit: cover;
   flex-shrink: 0;
 }
-
 .card-info {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   justify-content: center;
+  align-items: flex-start; 
 }
 
 .card-product-title {
