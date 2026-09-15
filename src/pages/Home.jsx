@@ -31,18 +31,18 @@ const Home = () => {
 
   return (
     <div className="page-wrapper">
-      {showBanner && (
-        <div className="top-banner d-flex justify-content-center align-items-center position-relative py-2">
-          <span className="small">
-            Discount 20% For New Member, <strong className="fw-bold">ONLY FOR TODAY!!</strong>
-          </span>
-          <FiX 
-            className="position-absolute cursor-pointer text-white" 
-            style={{ right: '20px', fontSize: '1.2rem' }} 
-            onClick={() => setShowBanner(false)} 
-          />
-        </div>
-      )}
+    {showBanner && (
+  <div className="top-banner d-flex justify-content-center align-items-center position-relative py-2 px-3">
+    <span className="small text-center pe-4">
+      Discount 20% For New Member, <strong className="fw-bold text-nowrap">ONLY FOR TODAY!!</strong>
+    </span>
+    <FiX 
+      className="position-absolute cursor-pointer text-white" 
+      style={{ right: '15px', top: '50%', transform: 'translateY(-50%)', fontSize: '1.2rem' }} 
+      onClick={() => setShowBanner(false)} 
+    />
+  </div>
+)}
 
       <div className="hero-wrapper" style={{ backgroundImage: `url(${heroBg})` }}>
         <Navbar expand="lg" className="navbar-custom py-4 position-absolute" style={{ top: 0 }}>

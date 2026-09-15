@@ -6,19 +6,33 @@ const FALLBACK_IMAGE = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22htt
 const ProductCard = ({ product }) => {
   return (
     <Card className="border-0 h-100 bg-transparent rounded-0">
-      <Card.Img 
-        variant="top" 
-        src={product?.image || FALLBACK_IMAGE}
-        onError={(e) => { e.target.onerror = null; e.target.src = FALLBACK_IMAGE; }}
-        style={{ height: '360px', objectFit: 'cover' }}
-        className="rounded-0 mb-3"
-      />
+      
+      <div className="position-relative">
+        <Card.Img 
+          variant="top" 
+          src={product?.image || FALLBACK_IMAGE}
+          onError={(e) => { e.target.onerror = null; e.target.src = FALLBACK_IMAGE; }}
+          style={{ height: '360px', objectFit: 'cover' }}
+          className="rounded-0 mb-3"
+        />
+        <div className="rating-badge d-flex align-items-center gap-1">
+          <span>⭐</span> {product?.rating || '4.95'}
+        </div>
+      </div>
+
       <Card.Body className="p-0 d-flex flex-column">
+    
+        <p className="text-muted small mb-1 text-uppercase" style={{ letterSpacing: '1px', fontSize: '0.65rem' }}>
+          {product?.category || 'PRODUCT CATEGORY'}
+        </p>
+        
         <h5 className="mb-2 text-dark" style={{ fontFamily: 'Playfair Display', fontSize: '1.4rem' }}>
           {product?.name || 'Product Name\nin Here'}
         </h5>
-        <p className="text-muted small mb-3">${product?.price || '300.000'}</p>
-        <a href="#shop" className="text-dark fw-bold text-decoration-none mt-auto" style={{ borderBottom: '1px solid #333', width: 'fit-content', fontSize: '0.75rem', letterSpacing: '1px', textTransform: 'uppercase', paddingBottom: '2px' }}>
+        
+        <p className="text-secondary small mb-3">${product?.price || '300.000'}</p>
+        
+        <a href="#shop" className="btn btn-teal rounded-0 mt-auto text-white text-decoration-none" style={{ width: 'fit-content', fontSize: '0.75rem', letterSpacing: '1px', textTransform: 'uppercase', padding: '8px 20px' }}>
           SHOP NOW
         </a>
       </Card.Body>
