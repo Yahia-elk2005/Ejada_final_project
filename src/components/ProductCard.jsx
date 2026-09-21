@@ -32,7 +32,17 @@ const ProductCard = ({ product }) => {
         
         <p className="text-secondary small mb-3">${product?.price || '300.000'}</p>
         
-        <a href="#shop" className="btn btn-teal rounded-0 mt-auto text-white text-decoration-none" style={{ width: 'fit-content', fontSize: '0.75rem', letterSpacing: '1px', textTransform: 'uppercase', padding: '8px 20px' }}>
+        <a
+          href="#shop"
+          className="btn btn-teal rounded-0 mt-auto text-white text-decoration-none"
+          style={{
+            width: 'fit-content',
+            fontSize: '0.75rem',
+            letterSpacing: '1px',
+            textTransform: 'uppercase',
+            padding: '8px 20px',
+          }}
+        >
           SHOP NOW
         </a>
       </Card.Body>

@@ -24,6 +24,10 @@ body {
   border: none;
   padding: 10px 24px;
 }
+.btn-teal:hover {
+  background-color: #004545;
+  color: white;
+}
 .hero-section {
   background-image: url('https://placehold.co/1920x800');
   background-size: cover;
